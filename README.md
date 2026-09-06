@@ -34,10 +34,7 @@
 2. このフォルダ内の全ファイルをリポジトリのルート（またはお好みで `docs/` フォルダ）にアップロードし、コミット・プッシュします。
 3. リポジトリの **Settings → Pages** を開き、Source を「Deploy from a branch」、Branch を `main`（アップロード先のフォルダ）に設定して保存します。
 4. しばらくすると `https://ユーザー名.github.io/リポジトリ名/` で公開されます。
-5. 公開URLが決まったら、以下のファイル内の `https://example.com/` をすべて実際のURLに置き換えてください（検索エンジン最適化・正しいsitemap生成のため）。
-   - 各HTMLファイルの `<link rel="canonical" ...>`
-   - `sitemap.xml` 内の `<loc>`
-   - `robots.txt` 内の `Sitemap:`
+5. 公開URLは `https://leben-k.github.io/tantei/` に確定し、このファイル一式にはすでに反映済みです（`canonical`タグ、`sitemap.xml`、`robots.txt`）。リポジトリ名やユーザー名を今後変更した場合のみ、再度置き換えが必要です。
 6. 独自ドメインを使う場合は、リポジトリ直下に `CNAME` ファイル（中身はドメイン名1行）を追加してください。
 
 ## 内容の更新について

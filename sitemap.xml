@@ -2,42 +2,40 @@
 <!--
   サイトマップ。プライバシーポリシー（privacy.html）は
   検索エンジンに登録しない方針のため、意図的に含めていません。
-  公開URLが確定したら、下記の https://example.com/ をすべて
-  実際のドメイン（例：https://ユーザー名.github.io/リポジトリ名/）に置き換えてください。
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/index.html</loc>
+    <loc>https://leben-k.github.io/tantei/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://example.com/form1.html</loc>
+    <loc>https://leben-k.github.io/tantei/form1.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/form2.html</loc>
+    <loc>https://leben-k.github.io/tantei/form2.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/form3.html</loc>
+    <loc>https://leben-k.github.io/tantei/form3.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/form4.html</loc>
+    <loc>https://leben-k.github.io/tantei/form4.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/guide.html</loc>
+    <loc>https://leben-k.github.io/tantei/guide.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/terms.html</loc>
+    <loc>https://leben-k.github.io/tantei/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
