@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運営者情報・お問い合わせ｜探偵業届出書 作成ツール</title>
+<meta name="description" content="探偵業届出書 作成ツールの運営者情報と、お問い合わせフォームです。">
+<link rel="canonical" href="https://leben-k.github.io/tantei/operator.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 48 48%27%3E%3Crect x=%278%27 y=%276%27 width=%2724%27 height=%2730%27 rx=%271.5%27 fill=%27%23fff%27 stroke=%27%231c2333%27 stroke-width=%273%27/%3E%3Ccircle cx=%2730%27 cy=%2730%27 r=%277%27 fill=%27none%27 stroke=%27%23b9791c%27 stroke-width=%274%27/%3E%3Cline x1=%2735%27 y1=%2735%27 x2=%2742%27 y2=%2742%27 stroke=%27%23b9791c%27 stroke-width=%275%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skiplink" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="8" y="6" width="24" height="30" rx="1.5" stroke="#ffffff" stroke-width="2"/>
+        <line x1="13" y1="14" x2="27" y2="14" stroke="#ffffff" stroke-width="1.6"/>
+        <line x1="13" y1="19" x2="24" y2="19" stroke="#ffffff" stroke-width="1.6"/>
+        <circle cx="30" cy="30" r="7" stroke="#e0a24a" stroke-width="2.2"/>
+        <line x1="35.2" y1="35.2" x2="41" y2="41" stroke="#e0a24a" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__text">探偵業届出書 作成ツール<small>様式第1号〜第4号に対応</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav">☰</button>
+    <nav class="gnav" id="gnav" aria-label="主要ナビゲーション">
+      <a href="index.html">トップ</a>
+      <a href="form1.html">開始届出書</a>
+      <a href="form2.html">廃止届出書</a>
+      <a href="form3.html">変更届出書</a>
+      <a href="form4.html">標識</a>
+      <a href="guide.html">探偵業法の解説</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-bottom:0">
+    <div class="container prose">
+      <p class="hero__eyebrow">運営者情報・お問い合わせ</p>
+      <h1>運営者情報・お問い合わせ</h1>
+      <p class="lead">「探偵業届出書 作成ツール」の運営者情報と、お問い合わせ方法をご案内します。</p>
+
+      <h2>1. 運営者</h2>
+      <!--
+        ▼運営者名・所在地・連絡先など、実際の情報に書き換えてください。
+        個人で運営している場合は氏名、法人の場合は名称を記載してください。
+      -->
+      <ul>
+        <li><strong>運営者名：</strong>［ここに運営者名（氏名または名称）を記載してください］</li>
+        <li><strong>所在地：</strong>［必要に応じて記載してください（非公開でも構いません）］</li>
+        <li><strong>連絡方法：</strong>下記のお問い合わせフォームをご利用ください。</li>
+      </ul>
+      <p class="help">本ツールの内容についての免責事項は、<a href="terms.html">利用規約</a>の第2条をご覧ください。</p>
+
+      <h2>2. お問い合わせについて</h2>
+      <p>本ツールの内容（不具合のご連絡、ご意見・ご要望など）についてのお問い合わせは、下記フォームから送信してください。送信いただいた内容は、フォーム送信サービス「Formspree」を経由して運営者に届きます。</p>
+      <p class="help">なお、届出書の記載方法や添付書類など、提出手続そのものについてのご質問には、運営者としてお答えできない場合があります。その場合は、提出先となる警察署（生活安全課等）にご確認ください。</p>
+
+      <form action="https://formspree.io/f/mqpkdrao" method="POST" class="contact-form">
+        <div class="field">
+          <label class="field-label" for="cf-name">お名前<span class="req">必須</span></label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="cf-email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="cf-email" name="email" required>
+          <p class="help">返信が必要な場合に使用します。</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="cf-message">お問い合わせ内容<span class="req">必須</span></label>
+          <textarea id="cf-message" name="message" required style="min-height:140px"></textarea>
+        </div>
+        <!-- スパム対策用ハニーポット（利用者には表示されません） -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="【探偵業届出書 作成ツール】お問い合わせ">
+        <div class="toolbar">
+          <button class="btn" type="submit">送信する</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>© 探偵業届出書 作成ツール</div>
+    <div class="foot-links">
+      <a href="guide.html">探偵業法の解説</a>
+      <a href="terms.html">利用規約</a>
+      <a href="privacy.html" rel="nofollow">プライバシーポリシー</a>
+      <a href="operator.html">運営者情報・お問い合わせ</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/nav.js"></script>
+</body>
+</html>
