@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探偵業変更届出書（様式第3号）の作成｜探偵業届出書 作成ツール</title>
+<meta name="description" content="探偵業変更届出書（施行規則別記様式第3号）を、画面の質問に沿って入力するだけで作成できます。住所・営業所・役員などの変更があった日から10日以内の提出が必要です。">
+<link rel="canonical" href="https://leben-k.github.io/tantei/form3.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 48 48%27%3E%3Crect x=%278%27 y=%276%27 width=%2724%27 height=%2730%27 rx=%271.5%27 fill=%27%23fff%27 stroke=%27%231c2333%27 stroke-width=%273%27/%3E%3Ccircle cx=%2730%27 cy=%2730%27 r=%277%27 fill=%27none%27 stroke=%27%23b9791c%27 stroke-width=%274%27/%3E%3Cline x1=%2735%27 y1=%2735%27 x2=%2742%27 y2=%2742%27 stroke=%27%23b9791c%27 stroke-width=%275%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skiplink" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="8" y="6" width="24" height="30" rx="1.5" stroke="#ffffff" stroke-width="2"/>
+        <line x1="13" y1="14" x2="27" y2="14" stroke="#ffffff" stroke-width="1.6"/>
+        <line x1="13" y1="19" x2="24" y2="19" stroke="#ffffff" stroke-width="1.6"/>
+        <circle cx="30" cy="30" r="7" stroke="#e0a24a" stroke-width="2.2"/>
+        <line x1="35.2" y1="35.2" x2="41" y2="41" stroke="#e0a24a" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__text">探偵業届出書 作成ツール<small>様式第1号〜第4号に対応</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav">☰</button>
+    <nav class="gnav" id="gnav" aria-label="主要ナビゲーション">
+      <a href="index.html">トップ</a>
+      <a href="form1.html">開始届出書</a>
+      <a href="form2.html">廃止届出書</a>
+      <a href="form3.html" aria-current="page">変更届出書</a>
+      <a href="form4.html">標識</a>
+      <a href="guide.html">探偵業法の解説</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wizard-shell" data-accent="change">
+    <div class="wizard-header">
+      <div class="container">
+        <p class="kicker">様式第3号（探偵業の業務の適正化に関する法律施行規則第3条関係）</p>
+        <h1>探偵業変更届出書を作成する</h1>
+        <p style="color:var(--ink-soft);font-size:.92rem;max-width:62ch">商号・氏名・住所、営業所の名称や所在地、広告に使う名称、法人役員などに変更があったときに、変更の日から10日以内（登記事項証明書の添付を要する場合は20日以内）に提出する届出書です。</p>
+      </div>
+    </div>
+    <div class="wizard-body">
+      <div class="container" id="wizardMount"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>© 探偵業届出書 作成ツール</div>
+    <div class="foot-links">
+      <a href="guide.html">探偵業法の解説</a>
+      <a href="terms.html">利用規約</a>
+      <a href="privacy.html" rel="nofollow">プライバシーポリシー</a>
+      <a href="operator.html">運営者</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/common.js"></script>
+<script src="assets/wizard.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+(function(){
+  var T = Tantei;
+  var ROLE_OPTIONS = [
+    {value:"director", label:"取締役又は執行役"},
+    {value:"auditor", label:"監査役"},
+    {value:"exec_member", label:"業務を執行する社員"},
+    {value:"riji", label:"理事"},
+    {value:"kanji", label:"監事"},
+    {value:"other", label:"その他"}
+  ];
+  var CHANGE_TYPE_OPTIONS = [
+    {value:"appoint", label:"就任"},
+    {value:"retire", label:"退任"}
+  ];
+
+  var config = {
+    id: "form3",
+    exportName: "探偵業変更届出書_入力データ.json",
+    steps: [
+      {
+        id:"dest", title:"提出先・提出日",
+        desc:"営業所の所在地の都道府県を選ぶと、あて先となる公安委員会名が自動で表示されます。",
+        fields:[
+          {id:"pref", type:"prefecture", label:"営業所の所在地（都道府県）", required:true},
+          {id:"submitDate", type:"eradate", label:"届出年月日（提出する日）", required:true}
+        ]
+      },
+      {
+        id:"applicant", title:"届出者の現在の情報",
+        desc:"現在、公安委員会に届け出ている内容（変更前の内容）を入力してください。",
+        fields:[
+          {id:"furigana", type:"text", label:"商号、名称又は氏名（フリガナ）", required:true},
+          {id:"name", type:"text", label:"商号、名称又は氏名", required:true},
+          {id:"startReceiptNo", type:"text", label:"法第4条第1項の届出書の受理番号", required:true, help:"開始届出のときに交付された番号（標識に記載している番号）です。"},
+          {id:"officeName", type:"text", label:"営業所の名称", required:true},
+          {id:"officeAddress", type:"text", label:"営業所の所在地", required:true},
+          {id:"officeTel", type:"tel", label:"営業所の電話番号", required:false, placeholder:"000-0000-0000"}
+        ]
+      },
+      {
+        id:"changeMeta", title:"変更年月日・変更の事由・変更した項目",
+        desc:"変更した項目にチェックを入れると、あとのステップで詳しい内容を入力できます。複数選んでもかまいません。",
+        fields:[
+          {id:"changeDate", type:"eradate", label:"変更年月日（実際に変更した日）", required:true},
+          {id:"changeReason", type:"textarea", label:"変更の事由", required:true, placeholder:"例：営業所所在地の変更　例：取締役〇〇就任、取締役△△退任"},
+          {id:"chgAddress", type:"checkbox", label:"商号・氏名・住所の変更", checkboxLabel:"商号、名称若しくは氏名、又は住所に変更がある"},
+          {id:"chgOffice", type:"checkbox", label:"営業所の変更", checkboxLabel:"営業所の名称・所在地・種別に変更がある"},
+          {id:"chgAd", type:"checkbox", label:"広告名称の変更", checkboxLabel:"広告又は宣伝に使用する名称に変更がある"},
+          {id:"chgOfficers", type:"checkbox", label:"役員の変更", checkboxLabel:"法人役員の就任・退任がある（法人のみ）"}
+        ]
+      },
+      {
+        id:"addressChange", title:"商号・氏名・住所の変更内容",
+        desc:"変更後の内容を入力してください。",
+        fields:[
+          {id:"newName", type:"text", label:"変更後の商号、名称又は氏名", showIf:function(s){return s.chgAddress;}},
+          {id:"newAddress", type:"text", label:"変更後の住所", showIf:function(s){return s.chgAddress;}},
+          {id:"newTel", type:"tel", label:"変更後の電話番号", showIf:function(s){return s.chgAddress;}, placeholder:"000-0000-0000"}
+        ]
+      },
+      {
+        id:"officeChange", title:"営業所の変更内容（別紙1）",
+        desc:"変更後の営業所の内容を入力してください。",
+        fields:[
+          {id:"newOfficeName", type:"text", label:"変更後の営業所名称", showIf:function(s){return s.chgOffice;}},
+          {id:"newOfficeAddress", type:"text", label:"変更後の営業所所在地", showIf:function(s){return s.chgOffice;}, help:"建物名・部屋番号（階数等）まで記載してください。"},
+          {id:"newOfficeTel", type:"tel", label:"変更後の営業所電話番号", showIf:function(s){return s.chgOffice;}, placeholder:"000-0000-0000"},
+          {id:"newOfficeSetDate", type:"eradate", label:"変更（設置）年月日", showIf:function(s){return s.chgOffice;}},
+          {id:"newOfficeType", type:"radio", label:"営業所の種別", showIf:function(s){return s.chgOffice;}, options:[
+            {value:"main", label:"主たる営業所"},
+            {value:"other", label:"その他の営業所"}
+          ]}
+        ]
+      },
+      {
+        id:"adChange", title:"広告名称の変更内容",
+        desc:"変更後の名称を入力してください。使わなくなった場合は「無し」と入力してください。",
+        fields:[
+          {id:"newAdName", type:"text", label:"変更後の広告又は宣伝に使用する名称", showIf:function(s){return s.chgAd;}}
+        ]
+      },
+      {
+        id:"officerChange", title:"役員の異動内容（別紙2）",
+        desc:"就任・退任した役員について、それぞれ入力してください。",
+        fields:[
+          {id:"officerChanges", type:"repeater", label:"役員の異動", showIf:function(s){return s.chgOfficers;},
+            addLabel:"＋ 異動した役員を追加する",
+            itemLabel:function(i){ return "役員の異動 " + (i+1); },
+            template:[
+              {id:"changeType", type:"select", label:"就任・退任の別", options: CHANGE_TYPE_OPTIONS},
+              {id:"name", type:"text", label:"氏名"},
+              {id:"furigana", type:"text", label:"氏名（フリガナ）"},
+              {id:"role", type:"select", label:"役職", options: ROLE_OPTIONS},
+              {id:"address", type:"text", label:"住所"},
+              {id:"tel", type:"text", label:"電話番号"},
+              {id:"birth", type:"eradate", label:"生年月日"},
+              {id:"changeDate", type:"eradate", label:"就任・退任年月日"}
+            ]
+          }
+        ]
+      }
+    ],
+    renderDocument: function(s, T){
+      var commission = s.pref ? T.publicSafetyCommissionName(s.pref) : "○○県公安委員会";
+      var attach = "";
+
+      if(s.chgAddress){
+        attach += "<div class='doc-sub-title'>商号・氏名・住所の変更</div><table class='doc-table'><tbody>" +
+          "<tr><th>変更後の商号、名称又は氏名</th><td>" + T.esc(s.newName) + "</td></tr>" +
+          "<tr><th>変更後の住所</th><td>" + T.esc(s.newAddress) + "</td></tr>" +
+          "<tr><th>変更後の電話番号</th><td>" + T.esc(s.newTel) + "</td></tr>" +
+          "</tbody></table>";
+      }
+      if(s.chgOffice){
+        attach += "<div class='doc-sub-title'>別紙1　営業所の名称等の変更</div><table class='doc-table'><tbody>" +
+          "<tr><th>変更後の名称</th><td>" + T.esc(s.newOfficeName) + "</td></tr>" +
+          "<tr><th>変更後の所在地</th><td>" + T.esc(s.newOfficeAddress) + "</td></tr>" +
+          "<tr><th>変更後の電話番号</th><td>" + T.esc(s.newOfficeTel) + "</td></tr>" +
+          "<tr><th>変更年月日</th><td>" + T.esc(T.eraDateText(s.newOfficeSetDate)) + "</td></tr>" +
+          "<tr><th>種別</th><td>" + (s.newOfficeType==="main"?"主たる営業所":(s.newOfficeType==="other"?"その他の営業所":"")) + "</td></tr>" +
+          "</tbody></table>";
+      }
+      if(s.chgAd){
+        attach += "<div class='doc-sub-title'>広告名称の変更</div><table class='doc-table'><tbody>" +
+          "<tr><th>変更後の広告又は宣伝に使用する名称</th><td>" + T.esc(s.newAdName) + "</td></tr>" +
+          "</tbody></table>";
+      }
+      if(s.chgOfficers){
+        attach += "<div class='doc-sub-title'>別紙2　役員の異動</div><table class='doc-table'><thead><tr><th>就任/退任</th><th>氏名（フリガナ）</th><th>役職</th><th>住所</th><th>電話番号</th><th>生年月日</th><th>異動年月日</th></tr></thead><tbody>";
+        (s.officerChanges||[]).forEach(function(o){
+          var ct = (CHANGE_TYPE_OPTIONS.filter(function(c){return c.value===o.changeType;})[0]||{}).label||"";
+          var role = (ROLE_OPTIONS.filter(function(r){return r.value===o.role;})[0]||{}).label||"";
+          attach += "<tr><td>"+T.esc(ct)+"</td><td>"+T.esc(o.name)+"<br><span class='furigana'>"+T.esc(o.furigana)+"</span></td><td>"+T.esc(role)+"</td><td>"+T.esc(o.address)+"</td><td>"+T.esc(o.tel)+"</td><td>"+T.esc(T.eraDateText(o.birth))+"</td><td>"+T.esc(T.eraDateText(o.changeDate))+"</td></tr>";
+        });
+        if(!(s.officerChanges||[]).length){ attach += "<tr><td colspan='7'>（未登録）</td></tr>"; }
+        attach += "</tbody></table>";
+      }
+
+      return (
+        "<div class='doc-office'><table><tr><td>※ 資料区分</td><td style='width:60px'></td></tr>" +
+        "<tr><td>※ 受理警察署</td><td>（　　　　　署）</td></tr>" +
+        "<tr><td>※ 受理番号</td><td>※ 受理年月日　　　年　　月　　日</td></tr></table>" +
+        "<div style='font-size:10px;color:#555'>（※印は警察において記入する欄です。記入不要です）</div></div>" +
+        "<div class='doc-title'>探偵業変更届出書</div>" +
+        "<div class='doc-lawline'>探偵業の業務の適正化に関する法律第４条第２項の規定により届出をします。</div>" +
+        "<div class='doc-date-line'>" + T.esc(T.eraDateText(s.submitDate) || "　　年　　月　　日") + "</div>" +
+        "<div class='doc-to'>" + T.esc(commission) + "　殿</div>" +
+        "<table class='doc-table'><tbody>" +
+        "<tr><th>（フリガナ）</th><td class='furigana'>" + T.esc(s.furigana) + "</td></tr>" +
+        "<tr><th>商号、名称又は氏名</th><td>" + T.esc(s.name) + "</td></tr>" +
+        "<tr><th>法第4条第1項の届出書の受理番号</th><td>" + T.esc(s.startReceiptNo) + "</td></tr>" +
+        "<tr><th>営業所　名称</th><td>" + T.esc(s.officeName) + "</td></tr>" +
+        "<tr><th>営業所　所在地</th><td>" + T.esc(s.officeAddress) + "</td></tr>" +
+        "<tr><th>営業所　電話番号</th><td>" + T.esc(s.officeTel) + "</td></tr>" +
+        "<tr><th>変更年月日</th><td>" + T.esc(T.eraDateText(s.changeDate)) + "</td></tr>" +
+        "<tr><th>変更の事由</th><td>" + T.esc(s.changeReason||"").replace(/\n/g,"<br>") + "</td></tr>" +
+        "</tbody></table>" +
+        attach +
+        "<p class='doc-note'>用紙は日本産業規格Ａ４（白色無地）を使用してください。</p>"
+      );
+    }
+  };
+
+  new TanteiWizard(config, document.getElementById("wizardMount"));
+})();
+</script>
+</body>
+</html>
