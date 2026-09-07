@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  サイトマップ。プライバシーポリシー（privacy.html）は
+  サイトマップ。プライバシーポリシー（privacy.html）と
+  運営者情報・連絡ページ（operator.html）は
   検索エンジンに登録しない方針のため、意図的に含めていません。
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -36,11 +37,6 @@
   </url>
   <url>
     <loc>https://leben-k.github.io/tantei/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://leben-k.github.io/tantei/operator.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
