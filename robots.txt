@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /privacy.html
-Allow: /
-
-Sitemap: https://leben-k.github.io/tantei/sitemap.xml
