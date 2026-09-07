@@ -38,13 +38,12 @@
 <main id="main">
   <section class="hero" style="padding-bottom:0">
     <div class="container prose">
-      <p class="hero__eyebrow">プライバシーポリシー</p>
+      <p class="hero__eyebrow">プライバシーポリシー <span class="badge-noindex">検索エンジンには登録されません</span></p>
       <h1>プライバシーポリシー</h1>
       <p class="lead">「探偵業届出書 作成ツール」（以下「本ツール」）における、入力情報の取扱いについて説明します。</p>
 
       <h2>1. 入力していただく情報の取扱い</h2>
-      <p>本ツールは、届出書の作成に必要な氏名・住所・生年月日などの情報を画面上で入力していただきますが、これらの情報は、お使いの端末（ブラウザ）内でのみ処理されます。届出書作成のために入力していただいた内容が、運営者のサーバーその他の外部サーバーへ送信されることはありません。会員登録の仕組みも設けていません。</p>
-      <p>なお、本ツールの内容についてのご意見・連絡用に、別途「<a href="operator.html" rel="nofollow">運営者情報・連絡</a>」ページにフォームを設けています。このフォームに入力・送信された内容（お名前・メールアドレス・連絡内容）は、フォーム送信サービスである Formspree を経由して運営者に届きます。届出書の作成画面で入力する氏名・住所等とは別の仕組みであり、この連絡フォームを利用しない限り、外部に送信される情報はありません。</p>
+      <p>本ツールは、届出書の作成に必要な氏名・住所・生年月日などの情報を画面上で入力していただきますが、これらの情報は、お使いの端末（ブラウザ）内でのみ処理されます。入力内容が運営者のサーバーその他の外部サーバーへ送信されることはありません。フォームの送信ボタンや、会員登録といった仕組み自体を設けていません。</p>
 
       <h2>2. ブラウザ内保存（ローカルストレージ）について</h2>
       <p>入力途中の内容を後日引き続き編集できるよう、ブラウザの「ローカルストレージ」という仕組みを使って、お使いの端末の中だけに一時的に保存します。この情報は運営者を含む第三者が閲覧・取得することはできません。保存された内容を削除したい場合は、各様式ページの「最初からやり直す」ボタンを押すか、ブラウザの設定からサイトデータを削除してください。</p>
@@ -66,19 +65,33 @@
           をご覧ください。
         </li>
         <li>
-          <strong>Formspree（連絡フォームの送信）</strong><br>
-          「<a href="operator.html" rel="nofollow">運営者情報・連絡</a>」ページのフォームは、Formspree, Inc. が提供するフォーム送信サービスを利用しています。フォームに入力・送信した内容（お名前・メールアドレス・連絡内容等）は、Formspree を経由して運営者に届きます。詳しくは
+          <strong>Formspree（ご連絡フォームの送信）</strong><br>
+          本ツールに関するご意見・ご連絡を受け付けるため、下記「5. ご連絡について」のフォームから送信された内容は、Formspree, Inc. が提供するフォーム送信サービスを経由して運営者に届きます。フォームに入力した内容（メールアドレス・ご連絡内容等）は、届出書ウィザードの入力内容とは異なり、送信ボタンを押した場合に限り、Formspree社のサーバーを経由して運営者に送信されます。詳しくは
           <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree プライバシーポリシー</a>
           をご覧ください。
         </li>
       </ul>
-      <p>本ツールでは、上記以外のアクセス解析ツールや広告配信の仕組みは使用していません。</p>
+      <p>本ツールでは、上記以外のアクセス解析ツールや広告配信の仕組みは使用していません。なお、届出書を作成する各様式ページ（開始・廃止・変更届出書、標識）の入力内容は、このご連絡フォームとは完全に別の仕組みであり、引き続きどこにも送信されません。</p>
 
       <h2>4. Cookie（クッキー）について</h2>
       <p>本ツールは、利用者を識別するための独自のCookieを発行していません。上記の外部サービスの利用に伴い、各サービス側でCookie等が使用される場合があります。</p>
 
-      <h2>5. 連絡について</h2>
-      <p>本ツールに関する連絡は、<a href="operator.html" rel="nofollow">運営者情報・連絡</a>ページのフォームから承っています。なお、届出の記載方法や添付書類など、提出手続そのものについて不明な点がある場合は、提出先となる警察署（生活安全課等）にご連絡ください。</p>
+      <h2>5. ご連絡について</h2>
+      <p>本ツールに関するご意見・不具合のご報告は、以下のフォームからお送りいただけます。送信内容は、上記「3.」に記載のFormspreeというサービスを経由して運営者に届きます。なお、届出書そのものの記載方法や添付書類について不明な点がある場合は、内容の正確性を期すため、提出先となる警察署（生活安全課等）に直接お問い合わせください。</p>
+
+      <form class="contact-form" action="https://formspree.io/f/mqpkdrao" method="POST">
+        <div class="field">
+          <label class="field-label" for="contact-email">メールアドレス（返信用）<span class="req">必須</span></label>
+          <input type="email" id="contact-email" name="email" required placeholder="example@example.com">
+        </div>
+        <div class="field">
+          <label class="field-label" for="contact-message">ご連絡内容<span class="req">必須</span></label>
+          <textarea id="contact-message" name="message" required placeholder="ご意見・不具合の内容などをご記入ください。"></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="【探偵業届出書 作成ツール】ご連絡">
+        <input type="text" name="_gotcha" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn">送信する</button>
+      </form>
 
       <h2>6. 本ポリシーの変更</h2>
       <p>本ポリシーの内容は、必要に応じて予告なく変更することがあります。変更後の内容は、本ページに掲載した時点から適用されます。</p>
@@ -93,7 +106,6 @@
       <a href="guide.html">探偵業法の解説</a>
       <a href="terms.html">利用規約</a>
       <a href="privacy.html" rel="nofollow">プライバシーポリシー</a>
-      <a href="operator.html" rel="nofollow">運営者情報・連絡</a>
     </div>
   </div>
 </footer>
